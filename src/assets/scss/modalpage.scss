@@ -1,0 +1,33 @@
+@import "_common.scss";
+
+// ---------------------------------------
+// MODALS
+// ---------------------------------------
+.modal-backdrop {
+    z-index: 1020;
+}
+
+.btn-sidebar-close{
+    z-index: 1;
+}
+
+.sign-in{
+    &-box{
+        @include media-breakpoint-up(md){
+            width: rfs-value(576px);
+        }
+    }
+}
+
+.digit-group{
+    .digit-item{
+        @include size(40px);
+        @include media-breakpoint-up(sm){
+            @include size(45px)
+        }
+        @include media-breakpoint-up(md){
+            @include size(60px)
+        }
+    }
+}
+ 

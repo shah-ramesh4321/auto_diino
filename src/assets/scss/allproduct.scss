@@ -1,0 +1,116 @@
+@import "_common.scss";
+
+
+ .breadcrumb{
+     .breadcrumb-item{
+         a{
+            color:$gray-500!important;
+         }
+     }
+ }
+
+ .all-products{
+    .filter-left{      
+        width:320px;
+        @include media-breakpoint-down(lg){
+           position:fixed;
+           top: 0;
+           left:0;
+           z-index: 9999;
+           max-height: 100vh;
+           background-color:white;
+           overflow-y:auto;
+             @include transform(translateX(-100%));
+        @include transition(all 0.5s);
+        &.opened{
+            @include transform(translateX(0%));
+        }
+         }
+        .accordion-header{
+            .accordion-button{
+            text-transform: uppercase;
+            font-weight: 500;
+            @include padding(0px);
+            &:not(.collapsed) {
+                color: $dark;
+                background-color: white;
+                box-shadow: inherit!important;
+            }
+            &:focus {                
+                border-color:transparent !important;                
+                box-shadow: inherit!important;
+            }   
+           }
+        }
+        .accordion-body{
+            .radio-width{
+              margin-top: rfs-value(12px);
+            }
+            .form-check-input{
+                margin-left: 0px!important;
+            }
+            .input-group{
+                .form-control{
+                    background-color: $gray-200;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    border-right: none;
+                }
+                .input-group-text{
+                    border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    border-left: 0px;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-up(lg){
+        .filter-right-width{
+            width: calc(100% - 320px);
+        }
+     }
+     .product-card{
+         .slick-dots{
+            margin-top: -22px;
+            z-index: 999;
+             position: relative;
+          button{
+              opacity: 0;              
+          }
+         }
+         .size__pro{
+             position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;             
+             z-index: -1;             
+         }
+         .show-all-pro{
+            position: absolute;
+             bottom:10px;
+             right:10px;
+             opacity: 0;
+           }
+         &:hover{
+
+             .slick-dots{
+                 button{
+                     opacity: 1;
+                 }
+             }
+             .size__pro{
+                z-index: 1; 
+                opacity: 1;
+            }
+            .pro-info{
+                opacity: 0;
+            }
+            .show-all-pro{
+                opacity: 1;
+            }
+         }
+        
+     }
+       
+ }
+ 

@@ -1,0 +1,82 @@
+  
+@import "_common.scss";
+ 
+/*--------------------------------------------------------------
+# HOME PAGE START
+--------------------------------------------------------------*/
+ 
+.cart{
+    @include media-breakpoint-up(lg){
+        @include custom-div-table;
+        .cart-product{
+            height: 100px!important;                       
+        }
+        // .product-details{
+        //     // font-size: 1.1rem!important;
+        //     .btn{
+        //         // font-size: 1.2rem!important;
+        //     }
+        // }
+        .cart-table{
+            .thead{
+                border-top: 0.5px solid $gray-400;
+                border-bottom: 0.5px solid $gray-400;
+                vertical-align: middle;
+                
+            }
+            .th, .td{
+                padding: 15px;
+            }
+    
+        }
+        .price, .total{
+            .small{
+                display: none;
+            }
+        }
+    }
+    text-transform: uppercase;
+    .product-name, .th{
+        @extend %font-heading;
+    }
+    @include media-breakpoint-down(lg){
+        .thead{
+            display: none;
+        }
+        .tr{
+            margin-bottom: 1rem;
+        }
+        .cart-product{
+            @include size(calc(100%)!important);
+            width: 100%;
+            border:1px solid $gray-500;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            img{
+                width: 100%!important;
+                height: auto;
+            }
+        } 
+        .btn-remove{
+            border: 1px solid $gray-500;
+            @include size(30px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+                display: none;
+            }
+            @include hover{
+                background-color: $gray-500;
+                color: $white;
+            }
+        } 
+        .price{
+            margin-left: auto;
+            display: block;
+        }
+    }
+    @include media-breakpoint-down(sm){
+        font-size: 0.6rem!important;
+    }  
+}
