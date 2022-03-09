@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
+import '../../assets/scss/home.scss'
 import Logo from "../../assets/images/logo.png";
 import InteriorAccessories from "../../assets/images/icons/interior-accessories.svg";
 
@@ -22,7 +23,7 @@ const Navbar = () => {
                 <div class="row align-items-center justify-content-end">
                   <div class="col-auto py-3 pe-0 ">
                     <i
-                      // onClick={handleShow}
+                      onClick={handleShow}
                       data-bs-toggle="offcanvas"
                       data-bs-target="#offcanvasRight"
                       aria-controls="offcanvasRight"
